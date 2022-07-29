@@ -2,4 +2,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Product():
-    pass
+    code: str
+    name: str
+    price: float
