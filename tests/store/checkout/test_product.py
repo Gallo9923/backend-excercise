@@ -5,6 +5,7 @@ from store.checkout.product import Product
 class ProductTestCase(unittest.TestCase):
 
     def test_product(self):
+        """Tests if the the class Product has the correct attributes"""
         
         code: str = "VOUCHER"
         name: str = "Gift Card"
