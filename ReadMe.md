@@ -22,3 +22,12 @@ The interface for the checkout process has the following specifications:
 ● Items: TSHIRT, TSHIRT, TSHIRT, VOUCHER, TSHIRT - Total: 81.00€
 ● Items: VOUCHER, TSHIRT, VOUCHER, VOUCHER, PANTS, TSHIRT, TSHIRT - Total:
 74.50€
+
+
+## Solution
+
+
+### Class Diagram
+
+![Class diagram](./docs/Class%20Diagram/Class%20Diagram.png)
+[See the actual diagram file.](./docs/Class%20Diagram/Class%20Diagram.pdf)
