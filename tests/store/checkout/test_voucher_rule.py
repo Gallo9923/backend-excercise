@@ -17,11 +17,18 @@ class VoucherRuleTestCase(unittest.TestCase):
     def tearDown(self) -> None:
         self.vr = None
     
-    def test_VoucherRule(self) -> None:
+    def test_voucher_rule(self) -> None:
         """Tests if the the voucher rule is created successfully"""
 
         self.assertEqual(self.vr.name, self.vr_name)
         self.assertEqual(self.vr.voucher_counter, 0)
+
+    def test_scan_counter(self) -> None: 
+        """Tests whether the voucher rule is couting voucher type products"""
+        p: Product = Product(code=Code.VOUCHER, name="Gift Card", price=5.0)
+        self.vr.scan(p)
+
+        self.assertEqual(self.vr.voucher_counter, 1)  
 
     def test_zero_voucher_items(self) -> None:
         """Tests that no discount is applied with zero voucher items"""
