@@ -77,3 +77,6 @@ class TShirtRuleTestCase(unittest.TestCase):
             self.fail("Discount should not be None")
 
         self.assertAlmostEqual(discount.discount, 4.0)
+
+if __name__ == '__main__':
+    unittest.main()
