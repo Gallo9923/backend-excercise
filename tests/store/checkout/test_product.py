@@ -1,13 +1,13 @@
 import unittest
 
-from store.checkout.product import Product
+from store.checkout.product import Product, Code
 
 class ProductTestCase(unittest.TestCase):
 
     def test_product(self):
         """Tests if the the class Product has the correct attributes"""
         
-        code: str = "VOUCHER"
+        code: Code = Code.VOUCHER
         name: str = "Gift Card"
         price: float = 5.0
         p: Product = Product(code=code, name=name, price=price)
