@@ -53,11 +53,13 @@ class TShirtRule(PricingRule):
     tshirt_counter: int = field(init=False, default=0)
 
     def scan(self, product: Product):
+        """Scans a product"""
 
         if product.code == Code.TSHIRT:
             self.tshirt_counter += 1
 
     def get_discount(self) -> Optional[Discount]:
+        """Calculates the discount for a tshirt"""
 
         if self.tshirt_counter // 3 >= 1:
             discount = self.tshirt_counter * 1.0
