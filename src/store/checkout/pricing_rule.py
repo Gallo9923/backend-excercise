@@ -1,6 +1,5 @@
 from dataclasses import dataclass, field
 from abc import ABC, abstractmethod
-from math import prod
 from typing import Optional
 
 from store.checkout.product import Product, Code
