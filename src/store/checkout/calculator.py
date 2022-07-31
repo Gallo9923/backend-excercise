@@ -8,15 +8,16 @@ from store.checkout.discount import Discount
 
 @dataclass
 class Calculator(ABC):
-    
+    """Calculates the price of a checkout"""
+
     @abstractmethod
-    def get_total(self, products: List[Product], discounts: List[Discount]) -> str:
+    def get_total(self, products: List[Product], discounts: List[Discount]) -> float:
         pass
 
 
 @dataclass
 class CalculatorImpl(Calculator):
+    """Calculates the price of a checkout"""
 
-    @abstractmethod
-    def get_total(self, products: List[Product], discounts: List[Discount]) -> str:
+    def get_total(self, products: List[Product], discounts: List[Discount]) -> float:
         pass
