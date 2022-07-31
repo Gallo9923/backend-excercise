@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from abc import ABC, abstractmethod
-from dis import disco
 from typing import List
 
 from store.checkout.product import Product
