@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import List
+from typing import List, Optional
 from store.checkout.discount import Discount
 from store.checkout.pricing_rule import PricingRule
 
@@ -13,17 +13,33 @@ class DiscountCalculator(ABC):
 
     @abstractmethod
     def scan(self, product: Product) -> None:
+        """Scans the product for each pricing rule"""
         pass
 
     @abstractmethod
     def get_discounts(self) -> List[Discount]:
+        """Retrieves the list of discounts of the pricing rules"""
         pass
 
 @dataclass
 class DiscountCalculatorImpl(DiscountCalculator):
     
     def scan(self, product: Product) -> None:
-        pass
+        """Scans the product for each pricing rule"""
+
+        for pr in self.pricing_rules:
+            pr.scan(product=product)
     
     def get_discounts(self) -> List[Discount]:
-        return []
+        """Retrieves the list of discounts of the pricing rules"""
+        
+        discounts: List[Discount] = []
+
+        for pr in self.pricing_rules:
+            
+            discount: Optional[Discount] = pr.get_discount()
+
+            if discount is not None:
+                discounts.append(discount)
+
+        return discounts

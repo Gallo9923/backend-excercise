@@ -39,19 +39,19 @@ class DiscountCalculatorTestCase(unittest.TestCase):
         pricing_rules: List[PricingRule] = self.setup_pricing_rules_mocks()
 
         dc : DiscountCalculator = DiscountCalculatorImpl(pricing_rules=pricing_rules)
-        dc.scan = MagicMock()
             
         products: List[Product] = self.setup_products()
         
         # Test
 
         for product in products:
-            dc.scan(product)
+            dc.scan(product=product)
 
-        for index, pr in enumerate(pricing_rules):
-            magic_mock : MagicMock = pr.scan  # type: ignore
-            magic_mock.assert_called_once_with(products[index])
-    
+            for pr in pricing_rules:
+                magic_mock : MagicMock = pr.scan  # type: ignore
+                magic_mock.assert_called_with(product=product)
+
+
     def test_discounts_return(self):
         """Tests that dicount calculator returns list of discounts"""
 
