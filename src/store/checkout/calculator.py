@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from abc import ABC, abstractmethod
+from dis import disco
 from typing import List
 
 from store.checkout.product import Product
@@ -20,4 +21,13 @@ class CalculatorImpl(Calculator):
     """Calculates the price of a checkout"""
 
     def get_total(self, products: List[Product], discounts: List[Discount]) -> float:
-        pass
+
+        total: float = 0.0
+
+        for p in products:
+            total += abs(p.price)        
+        
+        for d in discounts:
+            total -= abs(d.discount)
+
+        return total

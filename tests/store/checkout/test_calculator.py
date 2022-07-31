@@ -39,6 +39,7 @@ class CalculatorTestCase(unittest.TestCase):
 
 
     def test_with_negative_discounts(self):
+        """Tests that the result is correct even with negative discounts"""
 
         discounts: List[Discount] = []
         discounts.append(Discount(name="Voucher discount", discount=-5.0))
@@ -47,6 +48,23 @@ class CalculatorTestCase(unittest.TestCase):
         products.append(Product(code=Code.VOUCHER, name="Gift Card", price=5.00))
         products.append(Product(code=Code.TSHIRT, name="Summer T-Shirt", price=20.0))
         products.append(Product(code=Code.VOUCHER, name="Gift Card", price=5.00))
+
+        c: Calculator = CalculatorImpl()
+        result: float = c.get_total(products=products, discounts=discounts)
+        
+        self.assertAlmostEqual(result, 25.0)
+
+
+    def test_with_negative_products(self):
+        """Tests that the result is correct even with negative product prices"""
+        
+        discounts: List[Discount] = []
+        discounts.append(Discount(name="Voucher discount", discount=5.0))
+
+        products: List[Product] = []
+        products.append(Product(code=Code.VOUCHER, name="Gift Card", price=-5.00))
+        products.append(Product(code=Code.TSHIRT, name="Summer T-Shirt", price=-20.0))
+        products.append(Product(code=Code.VOUCHER, name="Gift Card", price=-5.00))
 
         c: Calculator = CalculatorImpl()
         result: float = c.get_total(products=products, discounts=discounts)
