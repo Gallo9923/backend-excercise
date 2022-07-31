@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List
 
 from store.checkout.pricing_rule import PricingRule
@@ -10,7 +10,7 @@ from store.checkout.product import Product
 class Checkout():
     """Calculates the total price of a checkout of products with discounts"""
 
-    pricing_rules: List[PricingRule]
+    products: List[Product] = field(init=False)
     discount_calculator: DiscountCalculator
     calculator: Calculator
 
