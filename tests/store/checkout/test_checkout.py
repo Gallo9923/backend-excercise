@@ -71,7 +71,7 @@ class CheckoutTestCase(unittest.TestCase):
 
         # Setup
         discounts: List[Discount] = []
-        discounts.append(Discount(name="1", discount=1.0))
+        discounts.append(Discount(name="1", discount=7.50))
 
         pricing_rules: List[PricingRule] = Mock()
         
@@ -91,5 +91,6 @@ class CheckoutTestCase(unittest.TestCase):
         c.products = MagicMock(return_value=products)
 
         # Test
-        c.get_total()
+        result: float = c.get_total()
         calculator.get_total.assert_called_once_with(products=products, discounts=discounts)
+        self.assertAlmostEqual(result, 25)
