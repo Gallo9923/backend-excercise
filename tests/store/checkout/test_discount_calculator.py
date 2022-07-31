@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List
 import unittest
 from unittest.mock import MagicMock
 from store.checkout.discount import Discount
