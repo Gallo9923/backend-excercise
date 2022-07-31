@@ -8,6 +8,7 @@ from store.checkout.product import Product
 
 @dataclass
 class DiscountCalculator(ABC):
+    """Calculates the discount of products"""
 
     pricing_rules: List[PricingRule]
 
@@ -23,7 +24,8 @@ class DiscountCalculator(ABC):
 
 @dataclass
 class DiscountCalculatorImpl(DiscountCalculator):
-    
+    """Calculates the discount of products"""
+
     def scan(self, product: Product) -> None:
         """Scans the product for each pricing rule"""
 
