@@ -70,3 +70,6 @@ class CalculatorTestCase(unittest.TestCase):
         result: float = c.get_total(products=products, discounts=discounts)
         
         self.assertAlmostEqual(result, 25.0)
+
+if __name__ == '__main__':
+    unittest.main()

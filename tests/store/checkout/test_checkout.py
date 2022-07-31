@@ -34,7 +34,7 @@ class CheckoutTestCase(unittest.TestCase):
         # Test  
         for product in products:
             c.scan(product=product)
-            discount_calculator.scan.assert_called_once_with(product=product)
+            discount_calculator.scan.assert_called_with(product=product)
 
         self.assertEqual(c.products, products)
 
@@ -80,7 +80,7 @@ class CheckoutTestCase(unittest.TestCase):
         discount_calculator.get_discounts = MagicMock(return_value=discounts)
 
         calculator: Calculator = CalculatorImpl()
-        calculator.get_total = MagicMock()
+        calculator.get_total = MagicMock(return_value=25.0)
         
         products: List[Product] = []
         products.append(Product(code=Code.VOUCHER, name="Gift Card", price=5.00))
@@ -88,9 +88,12 @@ class CheckoutTestCase(unittest.TestCase):
         products.append(Product(code=Code.PANTS, name="Summer Pants", price=7.5))
 
         c: Checkout = Checkout(discount_calculator=discount_calculator , calculator=calculator)
-        c.products = MagicMock(return_value=products)
+        c.products = products
 
         # Test
         result: float = c.get_total()
         calculator.get_total.assert_called_once_with(products=products, discounts=discounts)
         self.assertAlmostEqual(result, 25)
+
+if __name__ == '__main__':
+    unittest.main()

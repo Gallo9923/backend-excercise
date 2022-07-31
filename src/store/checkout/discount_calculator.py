@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import List, Optional
+import unittest
 from store.checkout.discount import Discount
 from store.checkout.pricing_rule import PricingRule
 
@@ -45,3 +46,6 @@ class DiscountCalculatorImpl(DiscountCalculator):
                 discounts.append(discount)
 
         return discounts
+
+if __name__ == '__main__':
+    unittest.main()

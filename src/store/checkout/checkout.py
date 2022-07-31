@@ -1,10 +1,10 @@
 from dataclasses import dataclass, field
 from typing import List
 
-from store.checkout.pricing_rule import PricingRule
 from store.checkout.discount_calculator import DiscountCalculator
 from store.checkout.calculator import Calculator
 from store.checkout.product import Product
+from store.checkout.discount import Discount
 
 @dataclass
 class Checkout():
@@ -14,8 +14,20 @@ class Checkout():
     discount_calculator: DiscountCalculator
     calculator: Calculator
 
+    def __post_init__(self):
+        self.products = []
+
+
     def scan(self, product: Product) -> None:
-        pass
+        """Scans the product"""
+
+        self.discount_calculator.scan(product=product)
+        self.products.append(product)
+
 
     def get_total(self) -> float:
-        pass
+        """Calculates the total to pay of the checkout"""
+        
+        discounts: List[Discount] = self.discount_calculator.get_discounts()
+        total: float = self.calculator.get_total(products=self.products, discounts=discounts)
+        return total
