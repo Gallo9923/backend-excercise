@@ -32,8 +32,6 @@ The interface for the checkout process has the following specifications:
 
 [See the actual diagram file.](./docs/Class%20Diagram/Class%20Diagram.pdf)
 
-[See the actual diagram file.](./docs/Class%20Diagram/Class%20Diagram.pdf)
-
 ### Test it!
 
 1. Install Poetry dependency management [Link](https://python-poetry.org/docs/)
