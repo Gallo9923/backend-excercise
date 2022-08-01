@@ -191,7 +191,6 @@ curl -X 'POST' \
     "price": 20.0
   }
 ]'
-<<<<<<< HEAD
 ```
 
 ### Run tests
