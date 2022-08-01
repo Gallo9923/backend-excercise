@@ -1,10 +1,10 @@
 from dataclasses import dataclass
-from enum import Enum, auto
+from enum import Enum
 
-class Code(Enum):
-    VOUCHER = auto()
-    TSHIRT = auto()
-    PANTS = auto()
+class Code(str, Enum):
+    VOUCHER = "VOUCHER"
+    TSHIRT = "TSHIRT"
+    PANTS = "PANTS"
 
 @dataclass
 class Product():
