@@ -4,24 +4,23 @@ Nextail is thinking about expanding its business and not only forecast sales in 
 | **Code** | **Name**       | **Price** |
 |----------|----------------|-----------|
 | VOUCHER  | Gift Card      | 5.00 EUR  |
-| TSHIRT   | Summer T-Shirt | 7.50 EUR  |
+| TSHIRT   | Summer T-Shirt | 20.00 EUR  |
 | PANTS    | Summer Pants   | 7.50 EUR  |
 
 The different departments have agreed the following discounts:
-● A 2-for-1 special on VOUCHER items.
-● If you buy 3 or more TSHIRT items, the price per unit should be 19.00€.
-● Items can be scanned in any order, and the cashier should return the  total amount to be paid.
+- A 2-for-1 special on VOUCHER items.
+- If you buy 3 or more TSHIRT items, the price per unit should be 19 00€.
+- Items can be scanned in any order, and the cashier should return the  total amount to be paid.
 
 The interface for the checkout process has the following specifications:
-● The Checkout constructor receives a pricing_rules object
-● The Checkout object has a scan method that receives one item at a time
+- The Checkout constructor receives a pricing_rules object
+- The Checkout object has a scan method that receives one item at a time
 
 **Examples:**
-● Items: VOUCHER, TSHIRT, PANTS - Total: 32.50€
-● Items: VOUCHER, TSHIRT, VOUCHER - Total: 25.00€
-● Items: TSHIRT, TSHIRT, TSHIRT, VOUCHER, TSHIRT - Total: 81.00€
-● Items: VOUCHER, TSHIRT, VOUCHER, VOUCHER, PANTS, TSHIRT, TSHIRT - Total:
-74.50€
+- Items: VOUCHER, TSHIRT, PANTS - Total: 32.50€  
+- Items: VOUCHER, TSHIRT, VOUCHER - Total: 25.00€
+- Items: TSHIRT, TSHIRT, TSHIRT, VOUCHER, TSHIRT - Total: 81.00€
+- Items: VOUCHER, TSHIRT, VOUCHER, VOUCHER, PANTS, TSHIRT, TSHIRT - Total: 74.50€
 
 
 ## Solution
@@ -30,9 +29,12 @@ The interface for the checkout process has the following specifications:
 ### Class Diagram
 
 ![Class diagram](./docs/Class%20Diagram/Class%20Diagram.png)
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 [See the actual diagram file.](./docs/Class%20Diagram/Class%20Diagram.pdf)
 =======
+=======
+>>>>>>> master
 [See the actual diagram file.](./docs/Class%20Diagram/Class%20Diagram.pdf)
 
 ### Test it!
@@ -194,6 +196,7 @@ curl -X 'POST' \
     "price": 20.0
   }
 ]'
+<<<<<<< HEAD
 ```
 
 ### Run tests
@@ -202,3 +205,6 @@ curl -X 'POST' \
 poetry run python .\tests\store\checkout\test_suite.py
 ```
 >>>>>>> Stashed changes
+=======
+```
+>>>>>>> master
