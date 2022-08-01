@@ -29,12 +29,9 @@ The interface for the checkout process has the following specifications:
 ### Class Diagram
 
 ![Class diagram](./docs/Class%20Diagram/Class%20Diagram.png)
-<<<<<<< HEAD
-<<<<<<< Updated upstream
+
 [See the actual diagram file.](./docs/Class%20Diagram/Class%20Diagram.pdf)
-=======
-=======
->>>>>>> master
+
 [See the actual diagram file.](./docs/Class%20Diagram/Class%20Diagram.pdf)
 
 ### Test it!
@@ -204,7 +201,3 @@ curl -X 'POST' \
 ```
 poetry run python .\tests\store\checkout\test_suite.py
 ```
->>>>>>> Stashed changes
-=======
-```
->>>>>>> master
