@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from abc import ABC, abstractmethod
 from typing import List
 
-from store.checkout.product import Product
-from store.checkout.discount import Discount
+from src.store.checkout.product import Product
+from src.store.checkout.discount import Discount
 
 
 @dataclass

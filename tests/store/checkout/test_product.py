@@ -1,6 +1,6 @@
 import unittest
 
-from store.checkout.product import Product, Code
+from src.store.checkout.product import Product, Code
 
 class ProductTestCase(unittest.TestCase):
 

@@ -1,6 +1,6 @@
 import unittest
 
-from store.checkout.discount import Discount
+from src.store.checkout.discount import Discount
 class DiscountTestCase(unittest.TestCase):
 
     def test_discount(self):

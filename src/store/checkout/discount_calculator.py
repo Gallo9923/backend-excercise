@@ -2,10 +2,10 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import List, Optional
 import unittest
-from store.checkout.discount import Discount
-from store.checkout.pricing_rule import PricingRule
+from src.store.checkout.discount import Discount
+from src.store.checkout.pricing_rule import PricingRule
 
-from store.checkout.product import Product
+from src.store.checkout.product import Product
 
 @dataclass
 class DiscountCalculator(ABC):

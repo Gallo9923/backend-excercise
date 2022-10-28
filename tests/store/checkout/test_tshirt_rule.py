@@ -1,9 +1,9 @@
 from typing import List, Optional
 import unittest
-from store.checkout.discount import Discount
+from src.store.checkout.discount import Discount
 
-from store.checkout.pricing_rule import TShirtRule
-from store.checkout.product import Code, Product
+from src.store.checkout.pricing_rule import TShirtRule
+from src.store.checkout.product import Code, Product
 
 class TShirtRuleTestCase(unittest.TestCase):
 

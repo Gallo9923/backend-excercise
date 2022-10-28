@@ -2,12 +2,12 @@ import uvicorn
 from fastapi import FastAPI
 from typing import List
 
-from store.checkout.calculator import CalculatorImpl
-from store.checkout.product import Product
-from store.checkout.checkout import Checkout
-from store.checkout.discount_calculator import DiscountCalculator, DiscountCalculatorImpl
-from store.checkout.pricing_rule import PricingRule, TShirtRule, VoucherRule
-from store.checkout.product import Product
+from src.store.checkout.calculator import CalculatorImpl
+from src.store.checkout.product import Product
+from src.store.checkout.checkout import Checkout
+from src.store.checkout.discount_calculator import DiscountCalculator, DiscountCalculatorImpl
+from src.store.checkout.pricing_rule import PricingRule, TShirtRule, VoucherRule
+from src.store.checkout.product import Product
 
 app: FastAPI = FastAPI()
 

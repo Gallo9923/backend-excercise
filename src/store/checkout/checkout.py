@@ -1,10 +1,10 @@
 from dataclasses import dataclass, field
 from typing import List
 
-from store.checkout.discount_calculator import DiscountCalculator
-from store.checkout.calculator import Calculator
-from store.checkout.product import Product
-from store.checkout.discount import Discount
+from src.store.checkout.discount_calculator import DiscountCalculator
+from src.store.checkout.calculator import Calculator
+from src.store.checkout.product import Product
+from src.store.checkout.discount import Discount
 
 @dataclass
 class Checkout():

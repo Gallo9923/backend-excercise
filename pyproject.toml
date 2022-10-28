@@ -1,17 +1,25 @@
-[tool.poetry]
-name = "store"
-version = "0.1.0"
+[project]
+name = ""
+version = ""
 description = ""
-authors = ["Christian Gallo <42328477+Gallo9923@users.noreply.github.com>"]
+authors = [
+    {name = "Christian Gallo", email = "christian.gallo@nextail.co"},
+]
+dependencies = [
+    "fastapi>=0.85.1",
+    "uvicorn>=0.19.0",
+    "pytest>=7.2.0",
+]
+requires-python = ">=3.9"
+license = {text = "MIT"}
 
-[tool.poetry.dependencies]
-python = "^3.10"
-fastapi = "^0.79.0"
-uvicorn = "^0.18.2"
+[tool.pdm.build]
+package-dir = "src"
+includes = ["src/store"]
 
-[tool.poetry.dev-dependencies]
-pytest = "^5.2"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
+
+[tool.pdm]

@@ -1,11 +1,11 @@
 from typing import List
 import unittest
 from unittest.mock import MagicMock
-from store.checkout.discount import Discount
+from src.store.checkout.discount import Discount
 
-from store.checkout.discount_calculator import DiscountCalculator, DiscountCalculatorImpl
-from store.checkout.pricing_rule import PricingRule, TShirtRule, VoucherRule
-from store.checkout.product import Code, Product
+from src.store.checkout.discount_calculator import DiscountCalculator, DiscountCalculatorImpl
+from src.store.checkout.pricing_rule import PricingRule, TShirtRule, VoucherRule
+from src.store.checkout.product import Code, Product
 
 class DiscountCalculatorTestCase(unittest.TestCase):
 

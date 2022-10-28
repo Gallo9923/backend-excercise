@@ -2,8 +2,8 @@ from dataclasses import dataclass, field
 from abc import ABC, abstractmethod
 from typing import Optional
 
-from store.checkout.product import Product, Code
-from store.checkout.discount import Discount
+from src.store.checkout.product import Product, Code
+from src.store.checkout.discount import Discount
 
 @dataclass
 class PricingRule(ABC):

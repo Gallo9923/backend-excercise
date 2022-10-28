@@ -1,9 +1,9 @@
 from typing import List
 import unittest
 
-from store.checkout.calculator import Calculator, CalculatorImpl
-from store.checkout.discount import Discount
-from store.checkout.product import Code, Product
+from src.store.checkout.calculator import Calculator, CalculatorImpl
+from src.store.checkout.discount import Discount
+from src.store.checkout.product import Code, Product
 
 class CalculatorTestCase(unittest.TestCase):
 
